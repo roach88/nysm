@@ -1,0 +1,113 @@
+# generated: 2025-12-12
+# project: brutalist
+# project_key: NYSM
+# tracking_system: file-system
+# story_location: "{project-root}/docs/sprint-artifacts"
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic exists in epic file but not contexted
+#   - contexted or in-progress
+#   - done: Epic completed
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - drafted: Story file created in stories folder by *create-story
+#   - ready-for-dev: Draft approved and story context created by *story-ready
+#   - in-progress: Developer actively working on implementation by *dev-story
+#   - review: Implementation complete, ready for review by *code-review
+#   - done: Story completed by *story-done
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - completed: Retrospective has been done by *retrospective
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epics should be marked `in-progress` before stories can be marked beyond `backlog`
+# - SM typically drafts next story ONLY after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', dev reviews, then Dev moves to 'done'
+
+generated: 2025-12-12
+project: brutalist
+project_key: NYSM
+tracking_system: file-system
+story_location: "{project-root}/docs/sprint-artifacts"
+
+development_status:
+  # Epic 1: Foundation & IR Core
+  epic-1: in-progress
+  1-1-project-initialization-ir-type-definitions: ready-for-dev
+  1-2-constrained-irvalue-type-system: ready-for-dev
+  1-3-typed-action-outputs-with-error-variants: ready-for-dev
+  1-4-rfc-8785-canonical-json-marshaling: ready-for-dev
+  1-5-content-addressed-identity-with-domain-separation: ready-for-dev
+  1-6-cue-concept-spec-parser: ready-for-dev
+  1-7-cue-sync-rule-parser: ready-for-dev
+  1-8-ir-schema-validation: ready-for-dev
+  epic-1-retrospective: optional
+
+  # Epic 2: Durable Event Store
+  epic-2: backlog
+  2-1-sqlite-store-initialization-migrations: backlog
+  2-2-event-log-schema-with-logical-clocks: backlog
+  2-3-write-invocations-and-completions: backlog
+  2-4-read-flow-and-query-support: backlog
+  2-5-sync-firings-table-with-binding-hash: backlog
+  2-6-provenance-edges-table: backlog
+  2-7-crash-recovery-and-replay: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Sync Engine Core
+  epic-3: backlog
+  3-1-single-writer-event-loop: backlog
+  3-2-sync-rule-registration-and-declaration-order: backlog
+  3-3-when-clause-matching: backlog
+  3-4-output-case-matching-for-errors: backlog
+  3-5-flow-token-generation: backlog
+  3-6-flow-token-propagation: backlog
+  3-7-flow-scoped-sync-matching: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Query & Binding System
+  epic-4: backlog
+  4-1-queryir-type-system: backlog
+  4-2-queryir-validation: backlog
+  4-3-sql-backend-compiler: backlog
+  4-4-binding-set-execution: backlog
+  4-5-then-clause-invocation-generation: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: Idempotency & Cycle Safety
+  epic-5: backlog
+  5-1-binding-level-idempotency-enforcement: backlog
+  5-2-idempotency-in-replay-scenarios: backlog
+  5-3-cycle-detection-per-flow: backlog
+  5-4-max-steps-quota-enforcement: backlog
+  5-5-compile-time-cycle-analysis: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Conformance Harness
+  epic-6: backlog
+  6-1-scenario-definition-format: backlog
+  6-2-test-execution-engine: backlog
+  6-3-trace-assertions: backlog
+  6-4-final-state-assertions: backlog
+  6-5-operational-principle-validation: backlog
+  6-6-golden-trace-snapshots: backlog
+  epic-6-retrospective: optional
+
+  # Epic 7: CLI & Demo Application
+  epic-7: backlog
+  7-1-cli-framework-setup: backlog
+  7-2-compile-command: backlog
+  7-3-validate-command: backlog
+  7-4-run-command: backlog
+  7-5-replay-command: backlog
+  7-6-test-command: backlog
+  7-7-trace-command: backlog
+  7-8-demo-concept-specs: backlog
+  7-9-demo-sync-rules: backlog
+  7-10-demo-scenarios-and-golden-traces: backlog
+  epic-7-retrospective: optional

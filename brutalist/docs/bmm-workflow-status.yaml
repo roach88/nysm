@@ -1,0 +1,97 @@
+# NYSM - BMad Method Workflow Status
+# "Now You See Me" - Legible Software Framework
+# Generated: 2025-12-03
+
+generated: "2025-12-03"
+project: "NYSM"
+project_type: "framework"
+selected_track: "bmad-method"
+field_type: "greenfield"
+workflow_path: ".bmad/bmm/workflows/workflow-status/paths/method-greenfield.yaml"
+
+input_documents:
+  - path: "docs/analysis/brainstorming-session-2025-12-03.md"
+    type: "brainstorm"
+    description: "First Principles exploration of WYSIWYG legible software pattern"
+  - path: "initial-report.md"
+    type: "research"
+    description: "Codex analysis of arxiv paper 2508.14511 - architectural patterns and build path"
+
+workflow_status:
+  # Phase 0: Discovery
+  - id: "brainstorm-project"
+    phase: 0
+    status: "docs/analysis/brainstorming-session-2025-12-03.md"
+    note: "Completed during workflow-init session"
+
+  - id: "research"
+    phase: 0
+    status: "skipped"
+
+  - id: "product-brief"
+    phase: 0
+    status: "docs/analysis/product-brief-nysm-2025-12-12.md"
+    completed: "2025-12-12"
+    agent: "analyst"
+    note: "Completed - includes CUE as v0 surface format, SQL-first query substrate"
+
+  # Phase 1: Planning
+  - id: "prd"
+    phase: 1
+    status: "docs/prd.md"
+    completed: "2025-12-12"
+    agent: "pm"
+    note: "Complete PRD with functional/non-functional requirements, MVP phasing, technical architecture"
+
+  - id: "validate-prd"
+    phase: 1
+    status: "optional"
+    agent: "pm"
+
+  - id: "create-ux-design"
+    phase: 1
+    status: "conditional"
+    condition: "if_has_ui"
+    agent: "ux-designer"
+    note: "Determine after PRD if CLI-only or has UI components"
+
+  # Phase 2: Solutioning
+  - id: "create-architecture"
+    phase: 2
+    status: "docs/architecture.md"
+    completed: "2025-12-12"
+    agent: "architect"
+    note: "Complete architecture with 9 critical decisions, 6 implementation patterns, 80+ file structure"
+
+  - id: "create-epics-and-stories"
+    phase: 2
+    status: "docs/epics.md"
+    completed: "2025-12-12"
+    agent: "pm"
+    note: "Complete - 7 epics, 45 stories covering all 18 FRs and critical architecture decisions"
+
+  - id: "test-design"
+    phase: 2
+    status: "docs/test-design-system.md"
+    completed: "2025-12-12"
+    agent: "tea"
+    note: "System-level testability review - PASS. 4 high-risk ASRs identified, test strategy defined"
+
+  - id: "validate-architecture"
+    phase: 2
+    status: "optional"
+    agent: "architect"
+
+  - id: "implementation-readiness"
+    phase: 2
+    status: "docs/implementation-readiness-report-2025-12-12.md"
+    completed: "2025-12-12"
+    agent: "architect"
+    result: "READY"
+    note: "All criteria passed - 100% FR coverage, 9 critical decisions addressed, testability PASS"
+
+  # Phase 3: Implementation
+  - id: "sprint-planning"
+    phase: 3
+    status: "required"
+    agent: "sm"
