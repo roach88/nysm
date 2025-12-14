@@ -1,6 +1,6 @@
 # Story 1.6: CUE Concept Spec Parser
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

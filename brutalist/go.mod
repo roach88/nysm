@@ -1,0 +1,34 @@
+module github.com/roach88/nysm
+
+go 1.25
+
+require (
+	cuelang.org/go v0.11.1
+	github.com/google/uuid v1.6.0
+	github.com/mattn/go-sqlite3 v1.14.32
+	github.com/sebdah/goldie/v2 v2.8.0
+	github.com/spf13/cobra v1.8.1
+	github.com/stretchr/testify v1.11.1
+	golang.org/x/text v0.32.0
+	gopkg.in/yaml.v3 v3.0.1
+)
+
+require (
+	cuelabs.dev/go/oci/ociregistry v0.0.0-20240906074133-82eb438dd565 // indirect
+	github.com/cockroachdb/apd/v3 v3.2.1 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/emicklei/proto v1.13.2 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
+	github.com/opencontainers/go-digest v1.0.0 // indirect
+	github.com/opencontainers/image-spec v1.1.0 // indirect
+	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/protocolbuffers/txtpbfmt v0.0.0-20240823084532-8e6b51fa9bef // indirect
+	github.com/rogpeppe/go-internal v1.13.1 // indirect
+	github.com/sergi/go-diff v1.0.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
+	golang.org/x/mod v0.30.0 // indirect
+	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/oauth2 v0.23.0 // indirect
+)

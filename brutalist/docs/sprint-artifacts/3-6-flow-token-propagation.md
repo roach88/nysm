@@ -1,6 +1,6 @@
 # Story 3.6: Flow Token Propagation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

@@ -1,7 +1,7 @@
 # Story 6.4: Final State Assertions
 
 **Epic:** 6 - Conformance Harness
-**Status:** ready-for-dev
+**Status:** done
 **Created:** 2025-12-12
 **Story Points:** 5
 

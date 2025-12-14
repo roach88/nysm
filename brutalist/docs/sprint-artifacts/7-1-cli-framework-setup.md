@@ -2,7 +2,7 @@
 story_id: "7.1"
 epic_id: "7"
 title: "CLI Framework Setup"
-status: "ready-for-dev"
+status: "done"
 created: "2025-12-12"
 sprint: "TBD"
 points: "3"

@@ -1,6 +1,6 @@
 # Story 7.7: Trace Command
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

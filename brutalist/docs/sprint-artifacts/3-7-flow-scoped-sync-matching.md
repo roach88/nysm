@@ -1,6 +1,6 @@
 # Story 3.7: Flow-Scoped Sync Matching
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

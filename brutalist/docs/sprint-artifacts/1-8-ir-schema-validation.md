@@ -1,6 +1,6 @@
 # Story 1.8: IR Schema Validation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

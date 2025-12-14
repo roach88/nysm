@@ -1,6 +1,6 @@
 # Story 7.6: Test Command
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

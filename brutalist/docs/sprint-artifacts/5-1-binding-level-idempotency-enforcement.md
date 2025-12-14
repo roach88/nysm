@@ -1,6 +1,6 @@
 # Story 5.1: Binding-Level Idempotency Enforcement
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

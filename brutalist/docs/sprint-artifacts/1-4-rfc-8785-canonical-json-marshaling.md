@@ -1,6 +1,6 @@
 # Story 1.4: RFC 8785 Canonical JSON Marshaling
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

@@ -1,6 +1,6 @@
 # Story 1.7: CUE Sync Rule Parser
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

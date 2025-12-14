@@ -2,7 +2,7 @@
 story_id: "7.8"
 epic: "Epic 7: CLI & Demo Application"
 title: "Demo Concept Specs"
-status: "ready-for-dev"
+status: "done"
 created: "2025-12-12"
 dependencies:
   - "7.7"
@@ -707,5 +707,5 @@ testdata/golden/compiler/web_concept.golden
 
 ---
 
-**Story Status:** ready-for-dev
+**Story Status:** done
 **Next Story:** 7.9 - Demo Sync Rules

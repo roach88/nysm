@@ -1,6 +1,6 @@
 # Story 3.2: Sync Rule Registration and Declaration Order
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

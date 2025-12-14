@@ -1,6 +1,6 @@
 # Story 7.5: Replay Command
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

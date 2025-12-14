@@ -1,0 +1,25 @@
+{
+  "description": "RFC 8785 requires NO HTML escaping - these characters must appear literally",
+  "tests": [
+    {
+      "name": "less than",
+      "input": {"html": "<script>"},
+      "expected": "{\"html\":\"<script>\"}"
+    },
+    {
+      "name": "greater than",
+      "input": {"html": "</script>"},
+      "expected": "{\"html\":\"</script>\"}"
+    },
+    {
+      "name": "ampersand",
+      "input": {"text": "a & b"},
+      "expected": "{\"text\":\"a & b\"}"
+    },
+    {
+      "name": "all html chars",
+      "input": {"xss": "<script>alert('xss')</script>"},
+      "expected": "{\"xss\":\"<script>alert('xss')</script>\"}"
+    }
+  ]
+}

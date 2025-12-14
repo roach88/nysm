@@ -1,6 +1,6 @@
 # Story 4.1: QueryIR Type System
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

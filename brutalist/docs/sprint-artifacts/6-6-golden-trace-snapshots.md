@@ -1,6 +1,6 @@
 # Story 6.6: Golden Trace Snapshots
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

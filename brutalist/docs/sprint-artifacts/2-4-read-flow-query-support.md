@@ -1,6 +1,6 @@
 # Story 2.4: Read Flow and Query Support
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

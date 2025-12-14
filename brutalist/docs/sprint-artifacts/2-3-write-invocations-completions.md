@@ -1,6 +1,6 @@
 # Story 2.3: Write Invocations and Completions
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

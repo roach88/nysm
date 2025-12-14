@@ -1,6 +1,6 @@
 # Story 7.2: Compile Command
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

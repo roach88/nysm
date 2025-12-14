@@ -1,0 +1,55 @@
+{
+  "description": "Basic RFC 8785 canonical JSON test cases",
+  "tests": [
+    {
+      "name": "empty object",
+      "input": {},
+      "expected": "{}"
+    },
+    {
+      "name": "empty array",
+      "input": [],
+      "expected": "[]"
+    },
+    {
+      "name": "simple string",
+      "input": "hello",
+      "expected": "\"hello\""
+    },
+    {
+      "name": "integer",
+      "input": 42,
+      "expected": "42"
+    },
+    {
+      "name": "negative integer",
+      "input": -100,
+      "expected": "-100"
+    },
+    {
+      "name": "boolean true",
+      "input": true,
+      "expected": "true"
+    },
+    {
+      "name": "boolean false",
+      "input": false,
+      "expected": "false"
+    },
+    {
+      "name": "sorted keys",
+      "input": {"b": 1, "a": 2},
+      "expected": "{\"a\":2,\"b\":1}"
+    },
+    {
+      "name": "nested object",
+      "input": {"outer": {"inner": 1}},
+      "expected": "{\"outer\":{\"inner\":1}}"
+    },
+    {
+      "name": "array of mixed types",
+      "input": [1, "two", true],
+      "expected": "[1,\"two\",true]"
+    }
+  ]
+}

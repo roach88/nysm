@@ -1,6 +1,6 @@
 # Story 4.5: Then-Clause Invocation Generation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

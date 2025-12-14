@@ -1,6 +1,6 @@
 # Story 6.5: Operational Principle Validation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

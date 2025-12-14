@@ -1,6 +1,6 @@
 # Story 2.5: Sync Firings Table with Binding Hash
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

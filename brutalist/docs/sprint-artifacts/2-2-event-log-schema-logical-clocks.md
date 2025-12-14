@@ -1,6 +1,6 @@
 # Story 2.2: Event Log Schema with Logical Clocks
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

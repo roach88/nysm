@@ -1,6 +1,6 @@
 # Story 1.5: Content-Addressed Identity with Domain Separation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

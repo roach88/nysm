@@ -1,0 +1,1 @@
+{"flow_token":"test-flow-token-001","scenario_name":"simple_invocation","trace":[{"action_uri":"Cart.addItem","args":{"item_id":"widget","quantity":3},"seq":1,"type":"invocation"},{"output_case":"Success","seq":2,"type":"completion"}]}

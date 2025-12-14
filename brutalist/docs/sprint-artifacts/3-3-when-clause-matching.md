@@ -1,6 +1,6 @@
 # Story 3.3: When-Clause Matching
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

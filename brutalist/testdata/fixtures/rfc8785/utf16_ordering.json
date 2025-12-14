@@ -1,0 +1,37 @@
+{
+  "description": "UTF-16 code unit ordering test cases - these MUST differ from UTF-8 ordering",
+  "critical_test": {
+    "name": "U+E000 vs U+10000 - the canonical UTF-8 vs UTF-16 divergence case",
+    "explanation": [
+      "U+E000 (Private Use Area): UTF-8 [0xEE,0x80,0x80], UTF-16 [0xE000]",
+      "U+10000 (Linear B): UTF-8 [0xF0,0x90,0x80,0x80], UTF-16 [0xD800,0xDC00]",
+      "UTF-8 order: 0xEE < 0xF0, so U+E000 < U+10000",
+      "UTF-16 order: 0xD800 < 0xE000, so U+10000 < U+E000",
+      "RFC 8785 requires UTF-16 order, so 𐀀 (U+10000) must come BEFORE  (U+E000)"
+    ],
+    "input_keys": ["\uE000", "𐀀"],
+    "expected_key_order": ["𐀀", "\uE000"]
+  },
+  "tests": [
+    {
+      "name": "basic ascii sorted",
+      "input": {"z": 1, "a": 2, "m": 3},
+      "expected": "{\"a\":2,\"m\":3,\"z\":1}"
+    },
+    {
+      "name": "case sensitive - uppercase before lowercase",
+      "input": {"a": 1, "A": 2},
+      "expected": "{\"A\":2,\"a\":1}"
+    },
+    {
+      "name": "empty string first",
+      "input": {"a": 1, "": 2},
+      "expected": "{\"\":2,\"a\":1}"
+    },
+    {
+      "name": "numeric strings - lexicographic not numeric",
+      "input": {"10": 1, "2": 2, "1": 3},
+      "expected": "{\"1\":3,\"10\":1,\"2\":2}"
+    }
+  ]
+}

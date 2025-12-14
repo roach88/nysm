@@ -1,6 +1,6 @@
 # Story 7.9: Demo Sync Rules
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

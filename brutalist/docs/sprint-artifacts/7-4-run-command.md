@@ -1,6 +1,6 @@
 # Story 7.4: Run Command
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

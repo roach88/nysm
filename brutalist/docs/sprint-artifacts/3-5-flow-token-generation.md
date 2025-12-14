@@ -1,6 +1,6 @@
 # Story 3.5: Flow Token Generation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

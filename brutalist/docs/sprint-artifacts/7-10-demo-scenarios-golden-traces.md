@@ -1,6 +1,6 @@
 # Story 7.10: Demo Scenarios and Golden Traces
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

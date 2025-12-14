@@ -1,0 +1,32 @@
+# Binary
+nysm
+
+# Database files
+*.db
+
+# Golden test snapshots (regenerated)
+testdata/golden/*.golden
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Go
+vendor/
+
+# Cache
+.cache/
+
+# Local MCP config
+.mcp.json
+
+# Beads tracking
+.beads/
+
+# Claude Code settings (user-specific hooks)
+.claude/settings.json

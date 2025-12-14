@@ -1,6 +1,6 @@
 # Story 4.2: QueryIR Validation
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

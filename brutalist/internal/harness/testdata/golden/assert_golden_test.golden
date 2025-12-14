@@ -1,0 +1,1 @@
+{"scenario_name":"assert_golden_test","trace":[{"action_uri":"Cart.addItem","args":{"item_id":"item1","quantity":5},"seq":1,"type":"invocation"},{"output_case":"Success","seq":2,"type":"completion"}]}

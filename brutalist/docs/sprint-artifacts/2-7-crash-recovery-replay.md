@@ -1,6 +1,6 @@
 # Story 2.7: Crash Recovery and Replay
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

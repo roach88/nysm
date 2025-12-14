@@ -1,6 +1,6 @@
 # Story 6.1: Scenario Definition Format
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

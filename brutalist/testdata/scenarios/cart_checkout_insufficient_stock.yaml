@@ -1,0 +1,103 @@
+# Cart Checkout Insufficient Stock Scenario
+#
+# This scenario validates error handling when checkout fails due to
+# insufficient inventory:
+# 1. Inventory has limited stock (less than requested)
+# 2. Items are added to cart (exceeding available stock)
+# 3. Checkout attempts reservation which fails
+# 4. Error is propagated back to cart checkout
+# 5. No partial state changes occur
+#
+# Operational Principle: "When inventory is insufficient, checkout fails cleanly with no partial state"
+
+name: cart_checkout_insufficient_stock
+description: "Checkout with insufficient stock triggers error handling"
+
+specs:
+  - testdata/specs/cart.concept.cue
+  - testdata/specs/inventory.concept.cue
+  - testdata/specs/cart-inventory.sync.cue
+
+# Fixed flow token for deterministic testing
+flow_token: "test-cart-checkout-002"
+
+setup:
+  # Initialize inventory with limited stock (less than what will be requested)
+  - action: Inventory.setStock
+    args:
+      item_id: "widget"
+      quantity: 2
+
+flow:
+  # Add more items than available in inventory
+  - invoke: Cart.addItem
+    args:
+      item_id: "widget"
+      quantity: 5
+    expect:
+      case: Success
+      result:
+        item_id: "widget"
+        new_quantity: 5
+
+  # Checkout should fail due to insufficient stock
+  - invoke: Cart.checkout
+    args: {}
+    expect:
+      case: CheckoutFailed
+
+assertions:
+  # Verify setup step ran
+  - type: trace_contains
+    action: Inventory.setStock
+    args:
+      item_id: "widget"
+      quantity: 2
+
+  # Verify cart item was added
+  - type: trace_contains
+    action: Cart.addItem
+    args:
+      item_id: "widget"
+      quantity: 5
+
+  # Verify checkout was invoked (expecting failure)
+  - type: trace_contains
+    action: Cart.checkout
+
+  # Verify action order matches expected flow
+  - type: trace_order
+    actions:
+      - Inventory.setStock
+      - Cart.addItem
+      - Cart.checkout
+
+  # Verify single checkout attempt
+  - type: trace_count
+    action: Cart.checkout
+    count: 1
+
+# NOTE: Sync rule execution and error propagation are not yet implemented
+# in the harness. Once engine integration is complete (Epic 7 enhancement),
+# add these assertions:
+#
+#  - type: trace_contains
+#    action: Inventory.reserve
+#    args:
+#      item_id: "widget"
+#      quantity: 5
+#      output_case: InsufficientStock
+#
+#  - type: final_state
+#    table: inventory
+#    where:
+#      item_id: "widget"
+#    expect:
+#      quantity: 2
+#
+#  - type: final_state
+#    table: cart_items
+#    where:
+#      item_id: "widget"
+#    expect:
+#      quantity: 5

@@ -1,6 +1,6 @@
 # Story 6.3: Trace Assertions
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

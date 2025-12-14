@@ -1,0 +1,93 @@
+# Cart Checkout Success Scenario
+#
+# This scenario validates the successful checkout flow where:
+# 1. Inventory has sufficient stock
+# 2. Items are added to cart
+# 3. Checkout triggers inventory reservation via sync rule
+# 4. Inventory is decremented appropriately
+#
+# Operational Principle: "When a cart checks out, inventory is reserved for all cart items"
+
+name: cart_checkout_success
+description: "Successful checkout triggers inventory reservation"
+
+specs:
+  - testdata/specs/cart.concept.cue
+  - testdata/specs/inventory.concept.cue
+  - testdata/specs/cart-inventory.sync.cue
+
+# Optional: Fixed flow token for deterministic golden file comparison
+flow_token: "test-cart-checkout-001"
+
+setup:
+  # Initialize inventory with sufficient stock
+  - action: Inventory.setStock
+    args:
+      item_id: "widget"
+      quantity: 10
+
+flow:
+  # Add items to cart
+  - invoke: Cart.addItem
+    args:
+      item_id: "widget"
+      quantity: 3
+    expect:
+      case: Success
+      result:
+        item_id: "widget"
+        new_quantity: 3
+
+  # Perform checkout - this should trigger sync rule
+  - invoke: Cart.checkout
+    args: {}
+    expect:
+      case: Success
+
+assertions:
+  # Verify setup step ran
+  - type: trace_contains
+    action: Inventory.setStock
+    args:
+      item_id: "widget"
+      quantity: 10
+
+  # Verify cart item was added
+  - type: trace_contains
+    action: Cart.addItem
+    args:
+      item_id: "widget"
+      quantity: 3
+
+  # Verify checkout was invoked
+  - type: trace_contains
+    action: Cart.checkout
+
+  # Verify action order matches expected flow
+  - type: trace_order
+    actions:
+      - Inventory.setStock
+      - Cart.addItem
+      - Cart.checkout
+
+  # Verify single checkout invocation (idempotency)
+  - type: trace_count
+    action: Cart.checkout
+    count: 1
+
+# NOTE: Sync rule execution (Inventory.reserve triggered by Cart.checkout)
+# is not yet implemented in the harness. Once engine integration is complete
+# (Epic 7 enhancement), add these assertions:
+#
+#  - type: trace_contains
+#    action: Inventory.reserve
+#    args:
+#      item_id: "widget"
+#      quantity: 3
+#
+#  - type: final_state
+#    table: inventory
+#    where:
+#      item_id: "widget"
+#    expect:
+#      quantity: 7

@@ -1,6 +1,6 @@
 # Story 5.5: Compile-Time Cycle Analysis
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

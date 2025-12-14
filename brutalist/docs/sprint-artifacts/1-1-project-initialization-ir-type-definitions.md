@@ -1,6 +1,6 @@
 # Story 1.1: Project Initialization & IR Type Definitions
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -62,39 +62,44 @@ So that **I have a foundation to build all other components on**.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Initialize Go module and project files (AC: #1, #2)
-  - [ ] 1.1 Run `go mod init github.com/tyler/nysm`
-  - [ ] 1.2 Add all required dependencies to go.mod
-  - [ ] 1.3 Run `go mod tidy` to validate
-  - [ ] 1.4 Create `.gitignore` (nysm, *.db, testdata/golden/*.golden)
-  - [ ] 1.5 Create `README.md` stub linking to docs/
-  - [ ] 1.6 Create `.golangci.yml` linter config
+- [x] Task 1: Initialize Go module and project files (AC: #1, #2)
+  - [x] 1.1 Run `go mod init github.com/tyler/nysm`
+  - [x] 1.2 Add all required dependencies to go.mod
+  - [x] 1.3 Run `go mod tidy` to validate
+  - [x] 1.4 Create `.gitignore` (nysm, *.db, testdata/golden/*.golden)
+  - [x] 1.5 Create `README.md` stub linking to docs/
+  - [x] 1.6 Create `.golangci.yml` linter config
 
-- [ ] Task 2: Create directory structure (AC: #1)
-  - [ ] 2.1 Create core packages: `cmd/nysm/`, `internal/{ir,compiler,store,engine,queryir,querysql,harness,cli,testutil}/`
-  - [ ] 2.2 Create test directories: `testdata/{scenarios,golden,fixtures/rfc8785}/`
-  - [ ] 2.3 Create specs directory: `specs/`
-  - [ ] 2.4 Add stub files to each internal package
+- [x] Task 2: Create directory structure (AC: #1)
+  - [x] 2.1 Create core packages: `cmd/nysm/`, `internal/{ir,compiler,store,engine,queryir,querysql,harness,cli,testutil}/`
+  - [x] 2.2 Create test directories: `testdata/{scenarios,golden,fixtures/rfc8785}/`
+  - [x] 2.3 Create specs directory: `specs/`
+  - [x] 2.4 Add stub files to each internal package
 
-- [ ] Task 3: Create IR types (AC: #3, #5, #6)
-  - [ ] 3.1 Create `internal/ir/doc.go` - package documentation
-  - [ ] 3.2 Create `internal/ir/types.go` - ConceptSpec, ActionSig, SyncRule, Invocation, Completion, SecurityContext
-  - [ ] 3.3 Create `internal/ir/clause.go` - WhenClause, WhereClause, ThenClause
-  - [ ] 3.4 Create `internal/ir/refs.go` - ActionRef, ConceptRef
-  - [ ] 3.5 Create `internal/ir/store_types.go` - SyncFiring, ProvenanceEdge (store-layer, not IR)
-  - [ ] 3.6 Create `internal/ir/version.go` - IRVersion, EngineVersion constants
+- [x] Task 3: Create IR types (AC: #3, #5, #6)
+  - [x] 3.1 Create `internal/ir/doc.go` - package documentation
+  - [x] 3.2 Create `internal/ir/types.go` - ConceptSpec, ActionSig, SyncRule, Invocation, Completion, SecurityContext
+  - [x] 3.3 Create `internal/ir/clause.go` - WhenClause, WhereClause, ThenClause
+  - [x] 3.4 Create `internal/ir/refs.go` - ActionRef, ConceptRef
+  - [x] 3.5 Create `internal/ir/store_types.go` - SyncFiring, ProvenanceEdge (store-layer, not IR)
+  - [x] 3.6 Create `internal/ir/version.go` - IRVersion, EngineVersion constants
 
-- [ ] Task 4: Create IRValue type system (AC: #4)
-  - [ ] 4.1 Create `internal/ir/value.go` - sealed IRValue interface
-  - [ ] 4.2 Implement IRString, IRInt, IRBool, IRArray, IRObject
-  - [ ] 4.3 Add deterministic iteration helper for IRObject
+- [x] Task 4: Create IRValue type system (AC: #4)
+  - [x] 4.1 Create `internal/ir/value.go` - sealed IRValue interface
+  - [x] 4.2 Implement IRString, IRInt, IRBool, IRArray, IRObject
+  - [x] 4.3 Add deterministic iteration helper for IRObject
 
-- [ ] Task 5: Verify and test (AC: #5, #6)
-  - [ ] 5.1 Create `internal/ir/types_test.go` - instantiation + JSON marshaling tests
-  - [ ] 5.2 Create `internal/ir/value_test.go` - IRValue type tests
-  - [ ] 5.3 Verify `go build ./...` succeeds
-  - [ ] 5.4 Verify `go vet ./...` passes
-  - [ ] 5.5 Verify ir has no internal deps: `go list -f '{{.Imports}}' ./internal/ir`
+- [x] Task 5: Verify and test (AC: #5, #6)
+  - [x] 5.1 Create `internal/ir/types_test.go` - instantiation + JSON marshaling tests
+  - [x] 5.2 Create `internal/ir/value_test.go` - IRValue type tests
+  - [x] 5.3 Verify `go build ./...` succeeds
+  - [x] 5.4 Verify `go vet ./...` passes
+  - [x] 5.5 Verify ir has no internal deps: `go list -f '{{.Imports}}' ./internal/ir`
+
+### Review Follow-ups (AI)
+
+- [x] [AI-Review] **[MEDIUM]** Handle JSON null safely in unmarshalIRValue - introduce IRNull type or reject null values (value.go:126)
+- [x] [AI-Review] **[LOW]** Add deep equality check for Args in TestInvocationRoundTrip (types_test.go:115)
 
 ## Dev Notes
 
@@ -441,15 +446,15 @@ func TestSecurityContextAlwaysPresent(t *testing.T) {
 
 ### Story Completion Checklist
 
-- [ ] All expected files created
-- [ ] `go build ./...` succeeds
-- [ ] `go vet ./...` passes
-- [ ] `go test ./internal/ir/...` passes
-- [ ] No import cycles
-- [ ] IR package has no internal dependencies
-- [ ] All JSON tags use snake_case
-- [ ] SecurityContext on both Invocation AND Completion
-- [ ] No float types anywhere in IR
+- [x] All expected files created
+- [x] `go build ./...` succeeds
+- [x] `go vet ./...` passes
+- [x] `go test ./internal/ir/...` passes (18 tests)
+- [x] No import cycles
+- [x] IR package has no internal dependencies (only std lib: encoding/json, fmt, slices)
+- [x] All JSON tags use snake_case
+- [x] SecurityContext on both Invocation AND Completion
+- [x] No float types anywhere in IR
 
 ### References
 
@@ -483,3 +488,78 @@ Claude Opus 4.5 (claude-opus-4-5-20251101)
 - SyncFiring/ProvenanceEdge are store-layer types with auto-increment IDs
 - ActionRef typed reference replaces raw strings
 - Args/Result use IRObject (constrained IRValue types)
+- Added custom JSON unmarshaling for IRObject/IRArray to handle interface types
+- 18 tests pass covering JSON marshaling, snake_case tags, round-trips, RFC 8785 ordering
+
+### Implementation Notes (2025-12-12)
+
+- Installed Go 1.25.5 via Homebrew
+- go.mod uses only stretchr/testify as direct dependency (others added when needed by later stories)
+- IRObject.SortedKeys() uses compareKeysRFC8785 for UTF-16 code unit ordering
+- unmarshalIRValue rejects floats with clear error message referencing CP-5
+
+## File List
+
+**New files created:**
+- go.mod
+- go.sum
+- .gitignore
+- .golangci.yml
+- README.md
+- cmd/nysm/main.go
+- internal/ir/doc.go
+- internal/ir/version.go
+- internal/ir/value.go
+- internal/ir/refs.go
+- internal/ir/types.go
+- internal/ir/clause.go
+- internal/ir/store_types.go
+- internal/ir/types_test.go
+- internal/ir/value_test.go
+- internal/compiler/doc.go
+- internal/store/doc.go
+- internal/engine/doc.go
+- internal/queryir/doc.go
+- internal/querysql/doc.go
+- internal/harness/doc.go
+- internal/cli/doc.go
+- internal/testutil/doc.go
+- testdata/scenarios/ (directory)
+- testdata/golden/ (directory)
+- testdata/fixtures/rfc8785/ (directory)
+- specs/ (directory)
+
+## Senior Developer Review (AI)
+
+**Review Date:** 2025-12-12
+**Reviewer:** Gemini 3 Pro Preview (via Zen MCP)
+**Review Outcome:** Changes Requested
+
+### Action Items
+
+- [ ] **[HIGH]** Implement `MarshalJSON` for `IRObject` to enforce RFC 8785 sorted key output (value.go) — *Deferred to Story 1-4*
+- [ ] **[HIGH]** Fix `compareKeysRFC8785` to use `utf16.Encode()` for correct UTF-16 code unit ordering (value.go:56) — *Deferred to Story 1-4*
+- [x] **[MEDIUM]** Handle JSON null safely - introduce `IRNull` type or reject null values (value.go:126)
+- [x] **[LOW]** Add deep equality check for `Args` in `TestInvocationRoundTrip` (types_test.go:115)
+- [ ] **[LOW]** Consider moving store types to `internal/store/model` in future refactor
+- [ ] **[INFO]** Add compile-time or linter enforcement for no-float constraint
+
+### Review Notes
+
+**Positive Findings:**
+- CP-6 correctly enforced (SecurityContext non-pointer)
+- CP-5 correctly enforced (float rejection with clear error)
+- Clean architecture with zero internal dependencies
+- Good test coverage (18 tests)
+- Consistent snake_case JSON tags
+- Sealed interface pattern correctly implemented
+
+**Scope Notes:**
+- HIGH issues #1 and #2 are explicitly covered by Story 1-4-rfc-8785-canonical-json-marshaling
+- Store types location is documented as intentional "store-layer exception"
+
+## Change Log
+
+- 2025-12-12: Story implemented - all tasks complete, 18 tests passing
+- 2025-12-12: Code review by Gemini 3 Pro - 2 HIGH, 1 MEDIUM, 3 LOW issues identified
+- 2025-12-12: Addressed review follow-ups - added IRNull type, deep equality tests (21 tests passing)

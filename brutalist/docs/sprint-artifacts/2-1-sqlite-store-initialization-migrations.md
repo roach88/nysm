@@ -1,6 +1,6 @@
 # Story 2.1: SQLite Store Initialization & Migrations
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

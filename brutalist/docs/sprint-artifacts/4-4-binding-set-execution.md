@@ -1,6 +1,6 @@
 # Story 4.4: Binding Set Execution
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

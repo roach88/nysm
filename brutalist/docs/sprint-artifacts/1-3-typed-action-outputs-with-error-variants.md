@@ -1,6 +1,6 @@
 # Story 1.3: Typed Action Outputs with Error Variants
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

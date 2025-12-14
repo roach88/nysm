@@ -2,7 +2,7 @@
 story_id: 7.3
 epic_id: 7
 title: Validate Command
-status: ready-for-dev
+status: done
 created: 2025-12-12
 updated: 2025-12-12
 assignee: unassigned

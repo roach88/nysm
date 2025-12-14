@@ -1,6 +1,6 @@
 # Story 3.4: Output Case Matching for Errors
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

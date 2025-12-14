@@ -1,6 +1,6 @@
 # Story 3.1: Single-Writer Event Loop
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

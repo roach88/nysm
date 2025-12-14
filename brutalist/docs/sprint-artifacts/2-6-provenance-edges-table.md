@@ -1,6 +1,6 @@
 # Story 2.6: Provenance Edges Table
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

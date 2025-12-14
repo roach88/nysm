@@ -1,6 +1,6 @@
 # Story 1.2: Constrained IRValue Type System
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

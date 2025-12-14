@@ -1,6 +1,6 @@
 # Story 5.2: Idempotency in Replay Scenarios
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
