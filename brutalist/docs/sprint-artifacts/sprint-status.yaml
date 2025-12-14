@@ -1,5 +1,5 @@
 # generated: 2025-12-12
-# project: brutalist
+# project: nysm
 # project_key: NYSM
 # tracking_system: file-system
 # story_location: "{project-root}/docs/sprint-artifacts"
@@ -31,7 +31,7 @@
 # - Dev moves story to 'review', dev reviews, then Dev moves to 'done'
 
 generated: 2025-12-12
-project: brutalist
+project: nysm
 project_key: NYSM
 tracking_system: file-system
 story_location: "{project-root}/docs/sprint-artifacts"

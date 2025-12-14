@@ -380,17 +380,17 @@ testdata/fixtures/concepts/invalid_multiple_errors.cue:2:1
 ## File List
 
 ### New Files
-- `/Users/tyler/dev/ideas/brutalist/internal/cli/validate.go` - Cobra command implementation
-- `/Users/tyler/dev/ideas/brutalist/internal/cli/validate_test.go` - CLI tests
-- `/Users/tyler/dev/ideas/brutalist/testdata/fixtures/concepts/valid_cart.cue` - Valid test fixture
-- `/Users/tyler/dev/ideas/brutalist/testdata/fixtures/concepts/invalid_missing_purpose.cue` - Invalid test fixture
-- `/Users/tyler/dev/ideas/brutalist/testdata/fixtures/syncs/invalid_unknown_action.cue` - Invalid test fixture
-- `/Users/tyler/dev/ideas/brutalist/testdata/golden/cli/validate_success.golden` - Golden output
-- `/Users/tyler/dev/ideas/brutalist/testdata/golden/cli/validate_errors.golden` - Golden output
+- `/Users/tyler/dev/ideas/nysm/internal/cli/validate.go` - Cobra command implementation
+- `/Users/tyler/dev/ideas/nysm/internal/cli/validate_test.go` - CLI tests
+- `/Users/tyler/dev/ideas/nysm/testdata/fixtures/concepts/valid_cart.cue` - Valid test fixture
+- `/Users/tyler/dev/ideas/nysm/testdata/fixtures/concepts/invalid_missing_purpose.cue` - Invalid test fixture
+- `/Users/tyler/dev/ideas/nysm/testdata/fixtures/syncs/invalid_unknown_action.cue` - Invalid test fixture
+- `/Users/tyler/dev/ideas/nysm/testdata/golden/cli/validate_success.golden` - Golden output
+- `/Users/tyler/dev/ideas/nysm/testdata/golden/cli/validate_errors.golden` - Golden output
 
 ### Modified Files
-- `/Users/tyler/dev/ideas/brutalist/cmd/nysm/main.go` - Add validate command to root
-- `/Users/tyler/dev/ideas/brutalist/internal/compiler/validate.go` - Add `ValidateSpecs()` function (may already exist from Story 1.8)
+- `/Users/tyler/dev/ideas/nysm/cmd/nysm/main.go` - Add validate command to root
+- `/Users/tyler/dev/ideas/nysm/internal/compiler/validate.go` - Add `ValidateSpecs()` function (may already exist from Story 1.8)
 
 ## Relationship to Other Stories
 
@@ -445,10 +445,10 @@ testdata/fixtures/concepts/invalid_multiple_errors.cue:2:1
 ## References
 
 ### Primary References
-- Epic 7: CLI & Demo Application (in `/Users/tyler/dev/ideas/brutalist/docs/epics.md`)
-- Story 1.8: IR Schema Validation (in `/Users/tyler/dev/ideas/brutalist/docs/epics.md`)
-- Architecture § CLI Commands (in `/Users/tyler/dev/ideas/brutalist/docs/architecture.md`)
-- Architecture § Error Codes (in `/Users/tyler/dev/ideas/brutalist/docs/architecture.md`)
+- Epic 7: CLI & Demo Application (in `/Users/tyler/dev/ideas/nysm/docs/epics.md`)
+- Story 1.8: IR Schema Validation (in `/Users/tyler/dev/ideas/nysm/docs/epics.md`)
+- Architecture § CLI Commands (in `/Users/tyler/dev/ideas/nysm/docs/architecture.md`)
+- Architecture § Error Codes (in `/Users/tyler/dev/ideas/nysm/docs/architecture.md`)
 
 ### Related PRD Sections
 - FR-1.2: Validate concept specs against canonical IR schema

@@ -3,7 +3,7 @@
 # Version: 6.0.0-alpha.13
 # Date: 2025-12-02T17:54:37.929Z
 
-project_name: brutalist
+project_name: nysm
 user_skill_level: intermediate
 sprint_artifacts: '{project-root}/docs/sprint-artifacts'
 tea_use_mcp_enhancements: true
